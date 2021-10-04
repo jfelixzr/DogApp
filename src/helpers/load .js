@@ -2,16 +2,16 @@ import { db } from '../firebase/firebase-config'
 
 export const load = async (uid) => {
 
-    const DogStore = await db.collection(`/Dog`).get()
-    const dogsList = [];
+    const RecipeStore = await db.collection(`/Recipe`).get()
+    const recipeList = [];
 
-    DogStore.forEach(hijo=>{
-        dogsList.push({
+    RecipeStore.forEach(hijo=>{
+        recipeList.push({
         id:hijo.id,
         ...hijo.data()
        })
     })
    
-    return dogsList
+    return recipeList
 }
 

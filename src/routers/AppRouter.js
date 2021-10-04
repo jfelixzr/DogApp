@@ -1,27 +1,32 @@
 import React from 'react'
 
-import ListarDog from '../components/ListarDog'
-import EditDog from '../components/EditDog'
-import FormAdd from '../components/FormAdd'
+
 import NavApp from '../components/NavApp'
 import {BrowserRouter as Router,
 Switch,
 
 Route} from 'react-router-dom'
-import MostrarDog from '../components/MostrarDog'
+
+
+import EditRecipe from '../components/EditRecipe'
+import AddRecipe from '../components/AddRecipe'
+import ShowRecipe from '../components/ShowRecipe'
+import Login from '../components/login/Login'
+import Registro from '../components/login/Registro'
 const RouterApp = () => {
     return (
         <>
         <Router>
         <NavApp />
-        <img src="https://res.cloudinary.com/db9wh5uvt/image/upload/v1625536708/perros_e1bfpk.png" 
-                             className="App-logo " 
-                             alt="logo" />
-        <Switch>
-        <Route exact path="/edit/:id" component={EditDog} />
         
-        <Route exact path="/add" component={FormAdd} />
-        <Route exact path="/*" component={MostrarDog} />
+        <Switch>
+        <Route exact path="/edit/:id" component={EditRecipe} />
+        
+        <Route exact path="/add" component={AddRecipe} />
+        <Route exact path="/inicio" component={ShowRecipe} />
+        <Route exact path="/login" component={Login} />
+
+        <Route exact path="/registro" component={Registro} />
         </Switch>
         </Router>
 
